@@ -34,39 +34,33 @@ const seasonClothes = [
     {'весна': 'одень ветровку и джинсы'}
 ];
 let el = document.querySelectorAll('option');
-console.log(seasonClothes);
-console.log(el);
+console.log(seasonClothes[1]);
+console.log(el.innerHTML);
+
+let option = document.querySelector('option')
+console.log(option);
+
 for (let i = 0; i < seasonClothes.length; i++){
     let n = seasonClothes[i];
     console.log(seasonClothes[i]);
 }
-//let input = document.querySelectorAll('')
-// select.selectedIndex
+
+//**********************************8
+
+let select = document.querySelector('#seasons');
+console.log(select.selectedIndex);
+select.addEventListener('change', seasonWear);
+
+function seasonWear(evn) {
+    let input = document.querySelector('input');
+    input.value = 'poiu'
+}
+//********************************
 
 
 let form = document.forms[0].elements[0].value;
 let x = form.value;
 //console.log(form);
 
-let select = document.querySelector('#seasons');
-let option = document.querySelector('option')
 
-console.log(option);
 
-let input = document.querySelector('input');
-
-//input.textContent = 'kflk';
-let variable = select.options[select.selectedIndex].text.toLowerCase();
-
-changeWear(variable);
-
-// функция поиска соответствия выбранного значения select в массиве
-function changeWear(v) {
-    seasonClothes.forEach(function(el){
-        if (el[v])  return  input.value = el[v];
-        //console.log(el[v]);
-    })
-}
-select.addEventListener('change',function(){
-    changeWear(select.options[select.selectedIndex].text.toLowerCase());
-});
